@@ -1,0 +1,1 @@
+export { hookUseDevice as useDevice } from './useDevice/useDevice'
