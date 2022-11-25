@@ -1,36 +1,28 @@
 # Porfolio - Lucas Carneiro
 
-Este projeto template com uma arquitetura e algumas tecnologias que eu gosto de utilizar para iniciar meus projetos.
+Esse repositório representa a camada de front end de um teste técnico proposto pela NG Cash para validar meus conhecimentos em engenharia de software.
+A Aplicação desenvolvida utiliza ReactJs, NextJS, Typescript, Styled Components e Apollo Client.
 
-## Tecnologias
+## Estrutura
 
-### React & Next
-O React é uma excelente biblioteca para criar interfaces e controlar estados, eventos e comportamentos de forma reativa. Combinada com NextJs, a aplicação conta com toda a funcionalidade de uma SPA somada à performance e à simplicidade de uma página HTML estática provida por SSR e Bundling.
+### Pages
+Conforme o padrão do NextJs, todas as páginas estão em `/pages` e representam as rotas possíveis da aplicação.
+Em `_document` e `_app` estão as configurações do documento HTML assim como contextos e providers.
 
-### Typescript
-Utilizar Typescript é uma forma de acelerar, criar e manter padrões de código e melhorar a segurança durante o processo de desenvolvimento prevenindo erros e inconsistências através das tipagens de objetos e procedimentos e a validação do código em tempo de desenvolvimento.
+### Atoms
+Seguindo o modelo de design atômico, as menores partes da interface (cores, tipografia, ícones...) estão relacionadas em `/src/atoms` que são passadas para toda a aplicação através de providers.
 
-### Styled Components
-Com a biblioteca do Styled Components é possível escrever o CSS de forma dinâmica com o CSS-in-JS e gerenciar melhor o escopo das regras CSS através da criação de componentes estilizados.
+### Components
+Elementos de interface reutilizáveis estão presentes em `/src/components` como botões, inputs e etc. São compostos de um `.tsx` e uma lista de styled components. Existe um setup para o desenvolvimento de testes unitários também.
 
-### Jest & React Testing Library
-Para desenvolver testes unitários e de integração estou utilizando uma combinação de Jest para execução e organização dos testes automatizados e RTL para a manibulação do DOM.
+### Organisms
+Alguns elementos mais complexos e compostos por mais componentes são destacados em `/src/organisms` por uma questão de organização e limpeza de código.
 
-### Framer Motion
-O Framer Motion é uma biblioteca utilizada para criar animações de forma simples e declarativa. Essa funcionalidade se comporta muito bem com o ciclo de vida dos componentes React
+### API
+Como esta aplicação se conecta com um back-end através de requisições GraphQL, na pasta `/src/api` estão as queries e mutations que são utilizadas.
 
-### Figma
-Figma é uma ferramenta de prototipação de interfaces online. Costumo utilizá-la para criar wireframes, a responsividade e o design system dos projetos. O arquivo Figma desse projeto pode ser encontrado [nesse link](https://github.com/stlucascarneiro/)
+### Public
+Na pasta `/public` estão todos os arquivos estáticos utilizados pela aplicação: imagens, favicons, etc.
 
-## Arquitetura
-### Static Site Generator & Server Side Rendering
-A maioria das páginas são geradas estaticamente pelo NextJs no lado do servidor e utilizam pouco ou nenhum processamento Javascript no lado do cliente. Isso garante uma melhor performance e ajuda nas ferramentas de pesquisas (SEO). Para páginas dinâmicas, uma página é gerada no lado do servidor a cada requisição para ser entregue ao cliente as informações prontas para o consumo.
-
-### Test Driven Development (TDD)
-Para esta aplicação utilizei a técnica de desenvolvimento guiada por testes. Para cada componente e organismo desenvolvo seu teste automatizado com o comportamento esperado usando o padrão AAA (Arrange, Act, Assert) e em seguida desenvolvo sua composição e comportamento.
-
-### Design System & Design Atômico
-Para criar uma identidade, manter padrões da interface e reduzir custos de manutenção optei por desenvolver um design system que é formado por regras e padrões pelos quais a interface se compõe. Dentre essas regras o Design Atômico serve para destacar e classificar das menores unidades da interface até a composição completa de uma página. Essa definição também ajuda a agilizar o processo de desenvolvimento.
-
-### Responsividade
-A interface criada se adapta a diferentes dispositivos, tanto desktops quanto mobile. Utilizei o conceito de Mobile-first para a criação visto que ajuda no desenvolvimento da adaptação da interface e dá prioridadade aos dispositivos mais utilizados atualmente.
+### Styles
+Em `/styles` estão as estilizações das tags utilizadas diretamente nas páginas assim como estilos e tipos globais
